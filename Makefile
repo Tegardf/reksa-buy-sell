@@ -19,3 +19,11 @@ run:
 # Run all tests with the race detector (requires Docker).
 test:
 	go test -race ./...
+
+lint: 
+	golangci-lint run ./...
+
+lint-fix:
+	golangci-lint run --fix ./...
+
+check: lint test
